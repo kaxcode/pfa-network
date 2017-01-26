@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get "post_pages/index"
 
-  root "post_pages#index"
+  get "post_pages/new"
+
+  root "post_pages#new"
 end

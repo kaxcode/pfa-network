@@ -39,10 +39,17 @@
           %a.navbar-brand{:href => "#"} PFA Network
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
+            %li.navbar-text
+              Sign in/ Sign up
           %form.navbar-form.navbar-right
             .form-group
               %input.form-control{:placeholder => "Search", :type => "text"}/
             %button.btn.btn-default{:type => "submit"} Submit
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "Write a post", root_path
+            %li.navbar-text
+              Sign in / Sign up
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li

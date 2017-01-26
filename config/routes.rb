@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get "post_pages/new"
 
-  get "post_pages/show"
+  get "post_pages/user_show"
 
-  root "post_pages#show"
+  root "post_pages#user_show"
 end

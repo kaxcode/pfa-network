@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get "nav_pages/topics"
 
-  root "nav_pages#topics"
+  get "post_pages/index"
+
+  root "post_pages#index"
 end

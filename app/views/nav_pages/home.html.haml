@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %title Polk Family Autism Network
+
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
@@ -36,7 +37,9 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} PFA Network
+          %a.navbar-brand
+            PFAN
+            %span.h4 Polk Family Autism Network
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
           %form.navbar-form.navbar-right
@@ -44,7 +47,7 @@
               %input.form-control{:placeholder => "Search", :type => "text"}/
             %button.btn.btn-default{:type => "submit"} Submit
           %ul.nav.navbar-nav.navbar-right
-            %li
+            %li.write-pos
               = link_to "Write a post", root_path
             %li.navbar-text
               Sign in / Sign up
@@ -62,21 +65,23 @@
     .container.home-top
       .row
         .home-image
-          .item{:style => "background-image: url()"}
+          .item
+          -# = image_tag "logo.jpg"
             .caption
               %h1 LOGO
+
 
     -# Topics List
     -# =============================================
     .container
       .row
         .col-md-6
-          %a.list-group-item{:href => "#"} Topic 1
-          %a.list-group-item{:href => "#"} Topic 2
-          %a.list-group-item{:href => "#"} Topic 3
-          %a.list-group-item{:href => "#"} Topic 4
+          %a.button{:href => "#"} Topic 1
+          %a.button{:href => "#"} Topic 2
+          %a.button{:href => "#"} Topic 3
+          %a.button{:href => "#"} Topic 4
         .col-md-6
-          %a.list-group-item{:href => "#"} Topic 5
-          %a.list-group-item{:href => "#"} Topic 6
-          %a.list-group-item{:href => "#"} Topic 7
-          %a.list-group-item{:href => "#"} Topic 8
+          %a.button{:href => "#"} Topic 5
+          %a.button{:href => "#"} Topic 6
+          %a.button{:href => "#"} Topic 7
+          %a.button{:href => "#"} Topic 8

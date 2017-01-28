@@ -1,0 +1,40 @@
+.text-body-logo {
+  color: #95a5a6;
+  font-family: 'Concert One', cursive;
+  margin-top: 40px;
+}
+
+.social-login-button {
+  display: inline-block;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.55em 0.3em;
+  clear: both;
+  text-align: center;
+  margin: 0.5em 0.1em;
+}
+
+.facebook-button {
+  background-color: #3a589a;
+
+  &:hover {
+  background-color: rgba(#3a589a, 0.8);
+  }
+}
+
+.twitter-button {
+  background-color: #4099ff;
+
+  &:hover {
+  background-color: rgba(#4099ff, 0.8);
+  }
+}
+
+.google-button {
+  background-color: #e9544f;
+
+  &:hover {
+    background-color: rgba(#e9544f, 0.8);
+  }
+}

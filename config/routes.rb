@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   get "post_pages/user_show"
 
-  root "nav_pages#login"
+  root "nav_pages#topics"
 end

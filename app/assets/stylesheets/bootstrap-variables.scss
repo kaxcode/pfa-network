@@ -20,6 +20,7 @@ $brand-success:         #18BC9C !default;
 $brand-info:            #3498DB !default;
 $brand-warning:         #F39C12 !default;
 $brand-danger:          #E74C3C !default;
+$brand-blue:            #6FCCDB !default;
 
 
 //== Scaffolding
@@ -371,7 +372,7 @@ $navbar-default-border:            transparent !default;
 
 // Navbar links
 $navbar-default-link-color:                #fff !default;
-$navbar-default-link-hover-color:          $brand-success !default;
+$navbar-default-link-hover-color:          $brand-blue !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #fff !default;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 10%) !default;
@@ -392,7 +393,7 @@ $navbar-default-toggle-border-color:       darken($navbar-default-bg, 10%) !defa
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      #fff !default;
-$navbar-inverse-bg:                         $brand-success !default;
+$navbar-inverse-bg:                         $brand-blue !default;
 $navbar-inverse-border:                     transparent !default;
 
 // Inverted navbar links

@@ -19,7 +19,7 @@
     -# Header
     -# =============================================
     %nav.navbar.navbar-inverse
-      .container
+      .container.nav-box
         .navbar-header
           %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
             %span.icon-bar
@@ -27,20 +27,19 @@
             %span.icon-bar
           %a.navbar-brand
             PFAN
-            %span Polk Family Autism Network
-        .collapse.navbar-collapse
+        .collapse.navbar-collapse.top-nav
           %ul.nav.navbar-nav
           %form.navbar-form.navbar-right
-            .form-group
-              %input.form-control{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default{:type => "submit"} Submit
+            .form-group.search-box
+              %input.form-control.input{:placeholder => "Search", :type => "text"}/
+            %button.btn.btn-default.search{:type => "submit"} Submit
           %ul.nav.navbar-nav.navbar-right
             %li.write-pos
               = link_to "Write a post", root_path
             %li.navbar-text
               Sign in / Sign up
         .collapse.navbar-collapse
-          %ul.nav.navbar-nav
+          %ul.nav.navbar-nav.bottom-nav
             %li
               %a{:href => "#"} Home
             %li
@@ -53,6 +52,10 @@
 
     -# Topics List
     -# =============================================
+    .container
+      .row
+        .col-md-12.text-center.topic-selection-text
+          .h1 Select a topic
     .container
       .row
         .col-md-6

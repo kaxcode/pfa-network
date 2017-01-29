@@ -48,25 +48,45 @@
               %a{:href => "#"} About
     -# User Show
     -# =============================================
-
-    .posts-box
-  .container
-    .row
-      .col-md-3
-        .thumbnail
-          .caption
-            %p Name
-            %p Messages
-            %p Likes
-            %p Following
-            %p Setting
-      .col-md-8
-        .post-each
-          .post-user-info
-            %p User Name
-            %p Post Publish Time
-          %h1 First Post
-          %p Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
-          .comment_count_heart
-            %span.i.fa.fa-heart{"aria-hidden" => "true"}
-            %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp; Count
+    .container-fluid.big-user-box
+      .row
+        .col-md-12
+          .user-box
+            .col-md-3
+              .user-box
+                .thumbnail
+                  .caption
+                    %p Name
+                    %p Messages
+                    %p Likes
+                    %p Following
+                    %p Setting
+            .col-md-8
+              %table.table.table-striped.table-bordered.table-hover
+                %tbody
+                  %tr
+                    %td.user-posts-list
+                      %h5.user-name-box User Name
+                      %p.published-time Post Publish Time
+                      %h1 First Post
+                      %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
+                      .comment_count_heart
+                        %span.heart-count
+                          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+                          %span.p Count &nbsp;
+                        %span.comment-count
+                          %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+                          %span.p Count
+                  %tr
+                    %td
+                      %h5.user-name-box User Name
+                      %p.published-time Post Publish Time
+                      %h1 First Post
+                      %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
+                      .comment_count_heart
+                        %span.heart-count
+                          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+                          %span.p Count &nbsp;
+                        %span.comment-count
+                          %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+                          %span.p Count

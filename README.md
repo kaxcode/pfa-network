@@ -1,24 +1,15 @@
-# README
+# Purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To create a web application for families in Polk County, FL to connect with other families that have children with autism spectrum disorder.
 
-Things you may want to cover:
+# How
 
-* Ruby version
+- User should be able to sign up with Twitter, Facebook, or Google.
+- User should be able to post an article, like articles, leave a comment in an article.
+- The posts will be separated into categories for easier navigation.
+- User will be able to see their own likes and posts.
+- Admin can see admin-only buttons for creating, deleting, and updating categories. Admin should also be able to delete posts, comments and users.
+- User should be able to edit, update, and delete their comments and posts.
+- Admin can send out weekly/monthly newsletter using mailchimp api.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Result

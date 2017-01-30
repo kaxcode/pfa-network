@@ -31,7 +31,7 @@ gem 'turbolinks', '~> 5'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
+gem "omniauth-google-oauth2"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

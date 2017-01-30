@@ -2,8 +2,7 @@
 
 To create a web application for families in Polk County, FL to connect with other families that have children with autism spectrum disorder.
 
-# How
-
+# Features
 - User should be able to sign up with Twitter, Facebook, or Google.
 - User should be able to post an article, like articles, leave a comment in an article.
 - The posts will be separated into categories for easier navigation.
@@ -12,4 +11,23 @@ To create a web application for families in Polk County, FL to connect with othe
 - User should be able to edit, update, and delete their comments and posts.
 - Admin can send out weekly/monthly newsletter using mailchimp api.
 
-# Result
+# How
+
+- Scaffolds
+  - comments
+  - users
+  - posts
+  - categories
+
+- Models
+  -likes
+
+- Gems/APIs
+  - omniauth
+  - omniauth-twitter
+  - omniauth-facebook
+  - omniauth-google-oauth2
+  - gibbon
+
+
+#Result

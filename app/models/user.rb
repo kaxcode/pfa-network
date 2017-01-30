@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
+  has_many :loves
+
   # Factory method to create a user from some omniauth data
   # Omniauth will use this to build a *NEW* user for us
   def self.from_omniauth(authentication_data)

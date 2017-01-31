@@ -1,0 +1,77 @@
+.fa-heart {
+  color: red;
+}
+
+.fa-commenting-o {
+  color: #6fccdb;
+}
+
+.published-time {
+  font-size: 12px;
+}
+
+.user-name-box {
+  margin-bottom: 5px;
+}
+
+// Media Queries
+/* iPhone 5 (portrait)----------- */
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-height: 568px)
+//   and (orientation: portrait) {
+//
+// }
+
+/* iPhone 6 (portrait)----------- */
+// @media only screen
+//   and (min-device-width: 375px)
+//   and (max-device-height: 667px)
+//   and (orientation: portrait) {
+//
+// }
+
+/* iPhone 6+ (portrait) ----------- */
+// @media only screen
+//   and (min-device-width: 414px)
+//   and (max-device-height: 736px)
+//   and (orientation: portrait) {
+//
+// }
+
+/* iPads (portrait) ------ */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait) {
+  .post-box {
+    margin-top: 20px;
+  }
+}
+
+/* iPads (landscape) ------ */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape) {
+  .post-box {
+    margin-top: 20px;
+  }
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen
+  and (min-width: 1224px) {
+  .post-box {
+    margin-top: 20px;
+  }
+}
+
+/* Samsung Galaxy S5 ----------- */
+// @media only screen
+//   and (min-device-width: 360px)
+//   and (max-device-height: 640px)
+//   and (orientation: portrait) {
+//
+// }

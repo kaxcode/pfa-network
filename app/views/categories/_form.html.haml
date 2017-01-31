@@ -6,8 +6,12 @@
         - @category.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  .post-new-form
+    .col-md-8.col-md-offset-2
+      .form-group.category-new-form-title
+        .h2 Category Name
+        .catergory-name-input-box
+          = f.text_field :name, class: 'form-control'
+      .form-group.catergory-save-button
+        .pull-right
+          = f.submit class: 'btn btn-info', value: "Create"

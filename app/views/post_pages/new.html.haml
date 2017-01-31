@@ -1,89 +1,29 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
-    %title Polk Family Autism Network
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "keywords"}/
-    %meta{:content => "", :name => "author"}/
-
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-
-    -# / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    -# / WARNING: Respond.js doesn't work if you view the page via file://
-    -# /[if lt IE 9]
-    -#   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    -#   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    -# / include libraries(jQuery, bootstrap)
-    -# %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"}
-    -# %script{:src => "http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"}
-    -# -# / include summernote css/js
-    -# %link{:href => "http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css", :rel => "stylesheet"}/
-    -# %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"}
-
-  %body
-
-    -# Header
-    -# =============================================
-    %nav.navbar.navbar-inverse
-      .container.nav-box
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand
-            PFAN
-        .collapse.navbar-collapse.top-nav
-          %ul.nav.navbar-nav
-          %form.navbar-form.navbar-right
-            .form-group.search-box
-              %input.form-control.input{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default.search{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li.write-pos
-              = link_to "Write a post", root_path
-            %li.navbar-text
-              Sign in / Sign up
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav.bottom-nav
-            %li
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#"} Topics
-            %li
-              %a{:href => "#"} About
-
-    -# New Post Category Dropdown
-    -# =============================================
-    .post-new-form
-      .col-md-8.col-md-offset-2
-        .btn-group
-          %button.btn.btn-large.btn-info Category
-          %button.btn.btn-large.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Action
-            %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
-            %li.divider
-            %li
-              %a{:href => "#"} Separated link
-        .form-group.post-new-form-title
-          %label.h2{:for => "title"} Title:
-          %textarea#comment.form-control{:rows => "1"}
-        .form-group.post-new-form-text
-          %label{:for => "text"}
-          %textarea#comment.form-control{:rows => "5"}
-        .control-group
-          %label.control-label{:for => "singlebutton"}
-          .controls
-            %button#edit.btn.btn-info{:onclick => "edit()", :type => "button"} Edit
-            %button#save.btn.btn-info{:onclick => "save()", :type => "button"} Save
+-# New Post Category Dropdown
+-# =============================================
+.post-new-form
+  .col-md-8.col-md-offset-2
+    .btn-group
+      %button.btn.btn-large.btn-info Category
+      %button.btn.btn-large.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"} Action
+        %li
+          %a{:href => "#"} Another action
+        %li
+          %a{:href => "#"} Something else here
+        %li.divider
+        %li
+          %a{:href => "#"} Separated link
+    .form-group.post-new-form-title
+      %label.h2{:for => "title"} Title:
+      %textarea#comment.form-control{:rows => "1"}
+    .form-group.post-new-form-text
+      %label{:for => "text"}
+      %textarea#comment.form-control{:rows => "5"}
+    .control-group
+      %label.control-label{:for => "singlebutton"}
+      .controls
+        %button#edit.btn.btn-info{:onclick => "edit()", :type => "button"} Edit
+        %button#save.btn.btn-info{:onclick => "save()", :type => "button"} Save

@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   resources :comments
+
   resources :categories
-  resources :posts
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :posts do
+    member do
+      get :love
+    end
+  end
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth
   get  '/auth/:provider/callback' => 'session#create'
@@ -20,5 +24,5 @@ Rails.application.routes.draw do
 
   get "nav_pages/topics"
 
-  root 'nav_pages#topics'
+  root 'nav_pages#home'
 end

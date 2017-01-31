@@ -6,14 +6,32 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
-  .field
-    = f.label :user
-    = f.text_field :user
-  .actions
-    = f.submit 'Save'
+  -# New Post Category Dropdown
+  -# =============================================
+  .post-new-form
+    .col-md-8.col-md-offset-2
+      .btn-group
+        %button.btn.btn-large.btn-info Category
+        %button.btn.btn-large.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+          %li.divider
+          %li
+            %a{:href => "#"} Separated link
+      .form-group.post-new-form-title
+        %label.h2{:for => "title"} Title:
+        %textarea#comment.form-control{:rows => "1"}
+      .form-group.post-new-form-text
+        %label{:for => "text"}
+        %textarea#comment.form-control{:rows => "5"}
+      -# .form-group
+      -#   %button#edit.btn.btn-info{:onclick => "edit()", :type => "button"} Edit
+      .form-group
+        .post-save-button.pull-right
+          = f.submit class: 'btn btn-info', value: "Post"

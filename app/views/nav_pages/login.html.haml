@@ -7,13 +7,15 @@
     .container
       .row
         .col-md-2.col-md-offset-5
-          = link_to root_path, class: "btn btn-primary btn-block social-login-button facebook-button" do
+          -# = link_to(provider: 'facebook'), class: "btn btn-primary btn-block social-login-button" do
+          -#   %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
+          = link_to auth_path(provider: 'facebook'), class: "btn btn-primary btn-block social-login-button" do
             %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
       .row
         .col-md-2.col-md-offset-5
-          = link_to root_path, class: "btn btn-info btn-block social-login-button twitter-button" do
+          = link_to auth_path(provider: 'twitter'), class: "btn btn-info btn-block social-login-button" do
             %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
       .row
         .col-md-2.col-md-offset-5
-          = link_to root_path, class: "btn btn-danger btn-block social-login-button google-button" do
+          = link_to auth_path(provider: 'google_oauth2'), class: "btn btn-danger btn-block social-login-button google-button" do
             %i.fa.fa-google.social-login-icon{"aria-hidden" => "true"}

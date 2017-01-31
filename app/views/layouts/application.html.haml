@@ -27,19 +27,6 @@
             %span.icon-bar
           = link_to root_path, class: "navbar-brand" do
             PFAN
-        -# #navbar.collapse.navbar-collapse
-          -# %ul.nav.navbar-nav.navbar-left
-          -#   %li
-          -#     = link_to "New Cafe Shop", new_shop_path
-          -# %ul.nav.navbar-nav.navbar-right
-          -#   - if logged_in?
-          -#     %li.navbar-text
-          -#       = current_user.name
-          -#     %li
-          -#       = link_to "Logout", logout_path
-          -#   - else
-          -#     %li
-          -#       = link_to 'Login with Github', auth_path(provider: 'github')
         .collapse.navbar-collapse.top-nav
           %ul.nav.navbar-nav
           %form.navbar-form.navbar-right
@@ -64,7 +51,7 @@
                   = link_to "Logout", logout_path
               - else
                 %li
-                  = link_to 'Login with Github', auth_path(provider: 'github')
+                  = link_to "Sign in/ Sign up", nav_pages_login_path
 
     .container
       - flash.each do |name, msg|

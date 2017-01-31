@@ -12,5 +12,13 @@ Rails.application.routes.draw do
   post '/login'                   => 'session#create'
   get  '/logout'                  => 'session#destroy'
 
-  root 'session#new'
+  get "nav_pages/home"
+
+  get "nav_pages/about"
+
+  get "nav_pages/login"
+
+  get "nav_pages/topics"
+
+  root 'nav_pages#home'
 end

@@ -1,69 +1,20 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
-    %title Polk Family Autism Network
+-# About Top Image/Logo
+-# =============================================
+.container.about-top
+  .row
+    .col-md-8.col-md-offset-2
+      .about-us-image
+        .item{:style => "background-image: url()"}
+          .caption
+            %h6 For Parents in Polk, FL
+            %h1 We Are...
 
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "keywords"}/
-    %meta{:content => "", :name => "author"}/
-
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-
-  %body
-
-    -# Header
-    -# =============================================
-    %nav.navbar.navbar-inverse
-      .container.nav-box
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand
-            PFAN
-        .collapse.navbar-collapse.top-nav
-          %ul.nav.navbar-nav
-          %form.navbar-form.navbar-right
-            .form-group.search-box
-              %input.form-control.input{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default.search{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li.write-pos
-              = link_to "Write a post", root_path
-            %li.navbar-text
-              Sign in / Sign up
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav.bottom-nav
-            %li
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#"} Topics
-            %li
-              %a{:href => "#"} About
-
-    -# About Top Image/Logo
-    -# =============================================
-    .container.about-top
-      .row
-        .col-md-8.col-md-offset-2
-          .about-us-image
-            .item{:style => "background-image: url()"}
-              .caption
-                %h6 For Parents in Polk, FL
-                %h1 We Are...
-
-    -# About Us content
-    -# =============================================
-    .post-box
-      .container
-        .row
-          .col-md-8.col-md-offset-2
-            .post-each
-              %h1 About us
-              %p Bonbon dragée powder. Chocolate wafer bonbon carrot cake tootsie roll danish jelly. Macaroon donut sweet sesame snaps dessert jelly. Toffee sweet roll pie muffin. Soufflé cake sugar plum liquorice candy brownie macaroon candy. Chocolate brownie croissant danish jelly-o jelly-o. Pudding sweet powder lemon drops. Dessert ice cream tootsie roll liquorice cotton candy oat cake jelly. Gingerbread gummies cotton candy gummies pudding donut. Apple pie cotton candy chocolate macaroon pudding dragée. Gummies lemon drops liquorice jelly-o danish sweet cake. Wafer gummi bears powder biscuit.
+-# About Us content
+-# =============================================
+.about-post-box
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        .post-each
+          %h1 About us
+          %p Bonbon dragée powder. Chocolate wafer bonbon carrot cake tootsie roll danish jelly. Macaroon donut sweet sesame snaps dessert jelly. Toffee sweet roll pie muffin. Soufflé cake sugar plum liquorice candy brownie macaroon candy. Chocolate brownie croissant danish jelly-o jelly-o. Pudding sweet powder lemon drops. Dessert ice cream tootsie roll liquorice cotton candy oat cake jelly. Gingerbread gummies cotton candy gummies pudding donut. Apple pie cotton candy chocolate macaroon pudding dragée. Gummies lemon drops liquorice jelly-o danish sweet cake. Wafer gummi bears powder biscuit.

@@ -44,7 +44,7 @@
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (orientation: portrait) {
-  .post-box {
+  .index-post-box {
     margin-top: 20px;
   }
 }
@@ -54,7 +54,7 @@
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (orientation: landscape) {
-  .post-box {
+  .index-post-box {
     margin-top: 20px;
   }
 }
@@ -63,13 +63,12 @@
 /* Desktops and laptops ----------- */
 @media only screen
   and (min-width: 1224px) {
-  .post-box {
+  .index-post-box {
     margin-top: 20px;
   }
 
   .jumbotron {
     height: 550px;
-    margin-top: 25px;
   }
 }
 

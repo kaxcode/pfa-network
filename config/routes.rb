@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   get "nav_pages/topics"
 
-  root 'nav_pages#home'
+  root 'nav_pages#login'
 end

@@ -1,68 +1,19 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
-    %title Polk Family Autism Network
-
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "keywords"}/
-    %meta{:content => "", :name => "author"}/
-
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-
-  %body
-
-    -# Header
-    -# =============================================
-    %nav.navbar.navbar-inverse
-      .container.nav-box
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand
-            PFAN
-        .collapse.navbar-collapse.top-nav
-          %ul.nav.navbar-nav
-          %form.navbar-form.navbar-right
-            .form-group.search-box
-              %input.form-control.input{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default.search{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li.write-pos
-              = link_to "Write a post", root_path
-            %li.navbar-text
-              Sign in / Sign up
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav.bottom-nav
-            %li
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#"} Topics
-            %li
-              %a{:href => "#"} About
-
-    -# Omniauth/Sing in buttons
-    -# =============================================
-    .connect-box
-      .connect-text
-        %h2.text-body-logo.text-center Connect with
-      .login-box
-        .container
-          .row
-            .col-md-2.col-md-offset-5
-              = link_to root_path, class: "btn btn-primary btn-block social-login-button facebook-button" do
-                %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
-          .row
-            .col-md-2.col-md-offset-5
-              = link_to root_path, class: "btn btn-info btn-block social-login-button twitter-button" do
-                %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
-          .row
-            .col-md-2.col-md-offset-5
-              = link_to root_path, class: "btn btn-danger btn-block social-login-button google-button" do
-                %i.fa.fa-google.social-login-icon{"aria-hidden" => "true"}
+-# Omniauth/Sing in buttons
+-# =============================================
+.connect-box
+  .connect-text
+    %h2.text-body-logo.text-center Connect with
+  .login-box
+    .container
+      .row
+        .col-md-2.col-md-offset-5
+          = link_to root_path, class: "btn btn-primary btn-block social-login-button facebook-button" do
+            %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
+      .row
+        .col-md-2.col-md-offset-5
+          = link_to root_path, class: "btn btn-info btn-block social-login-button twitter-button" do
+            %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
+      .row
+        .col-md-2.col-md-offset-5
+          = link_to root_path, class: "btn btn-danger btn-block social-login-button google-button" do
+            %i.fa.fa-google.social-login-icon{"aria-hidden" => "true"}

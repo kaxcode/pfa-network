@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :categories
+  resources :posts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "nav_pages/home"
 
-  get "nav_pages/about"
+  get  '/auth/:provider'          => 'omniauth#auth', as: :auth
+  get  '/auth/:provider/callback' => 'session#create'
+  get  '/auth/failure'            => 'session#failure'
 
-  get "nav_pages/login"
+  get  '/login'                   => 'session#new'
+  post '/login'                   => 'session#create'
+  get  '/logout'                  => 'session#destroy'
 
-  get "nav_pages/topics"
-
-  get "post_pages/index"
-
-  get "post_pages/new"
-
-  get "post_pages/user_show"
-
-  root "post_pages#user_show"
+  root 'session#new'
 end

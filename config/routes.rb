@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :comments
 
-  resources :categories
-  resources :posts do
+  resources :posts, except: [:index] do
     member do
       get :love
     end
+  end
+
+  resources :categories do
+    resources :posts, only: [:index]
   end
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth
@@ -16,13 +19,13 @@ Rails.application.routes.draw do
   post '/login'                   => 'session#create'
   get  '/logout'                  => 'session#destroy'
 
-  get "nav_pages/home"
+  get "welcome/home"
 
-  get "nav_pages/about"
+  get "welcome/about"
 
-  get "nav_pages/login"
+  get "welcome/login"
 
-  get "nav_pages/topics"
+  get "welcome/topics"
 
-  root 'nav_pages#home'
+  root 'welcome#home'
 end

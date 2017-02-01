@@ -37,9 +37,9 @@
             %li.write-pos
               = link_to "Write a post", new_post_path
             %li
-              = link_to "Topics", nav_pages_topics_path
+              = link_to "Topics", categories_path
             %li
-              = link_to "About", nav_pages_about_path
+              = link_to "About", welcome_about_path
 
             %li.write-pos
               = link_to "New Category", new_category_path
@@ -52,7 +52,7 @@
                   = link_to "Logout", logout_path
               - else
                 %li
-                  = link_to "Sign in/ Sign up", nav_pages_login_path
+                  = link_to "Sign in/ Sign up", welcome_login_path
 
     .container
       - flash.each do |name, msg|

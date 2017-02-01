@@ -1,0 +1,15 @@
+-# Home Top Image/Logo
+.jumbotron.logo-image
+
+-# Topics List
+-# =============================================
+.container
+  .row
+    .col-md-12.text-center.topic-selection-text
+      .h1 Select a topic
+.container
+  .row
+  - @categories.each do |category|
+    .col-md-6
+      %a.button
+        = category.name

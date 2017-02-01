@@ -23,7 +23,5 @@ Rails.application.routes.draw do
 
   get "welcome/about"
 
-  get "welcome/topics"
-
   root 'welcome#home'
 end

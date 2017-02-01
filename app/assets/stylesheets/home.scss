@@ -48,7 +48,7 @@
   and (max-device-height: 568px)
   and (orientation: portrait) {
   .jumbotron {
-    height: 160px;
+    height: 140px;
   }
 }
 
@@ -58,7 +58,7 @@
   and (max-device-height: 667px)
   and (orientation: portrait) {
   .jumbotron {
-    height: 180px;
+    height: 170px;
   }
 }
 
@@ -68,7 +68,7 @@
   and (max-device-height: 736px)
   and (orientation: portrait) {
   .jumbotron {
-    height: 200px;
+    height: 190px;
   }
 }
 
@@ -87,7 +87,8 @@
   }
 
   .jumbotron {
-    height: 355px;
+    height: 360px;
+    margin-top: 50px;
   }
 }
 
@@ -135,6 +136,6 @@
   and (max-device-height: 640px)
   and (orientation: portrait) {
   .jumbotron {
-    height: 180px;
+    height: 170px;
   }
 }

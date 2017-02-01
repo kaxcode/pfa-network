@@ -1,16 +1,21 @@
-.social-box
-  .row
-    .offset-md-3.col-md-6
-      = link_to auth_path(provider: 'facebook'), class: "btn btn-primary btn-block social-login-button" do
-        %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
-          %span.social-login-text Login with Facebook
-  .row
-    .offset-md-3.col-md-6
-      = link_to auth_path(provider: 'twitter'), class: "btn btn-info btn-block social-login-button" do
-        %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
-          %span.social-login-text Login with Twitter
-  .row
-    .offset-md-3.col-md-6
-      = link_to auth_path(provider: 'google_oauth2'), class: "btn btn-info btn-block social-login-button" do
-        %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
-          %span.social-login-text Login with Google
+-# Omniauth/Sing in buttons
+-# =============================================
+.connect-box
+  .connect-text
+    %h2.text-body-logo.text-center Connect with
+  .login-box
+    .container
+      .row
+        .col-md-2.col-md-offset-5
+          -# = link_to(provider: 'facebook'), class: "btn btn-primary btn-block social-login-button" do
+          -#   %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
+          = link_to auth_path(provider: 'facebook'), class: "btn btn-primary btn-block social-login-button" do
+            %i.fa.fa-facebook.social-login-icon{"aria-hidden" => "true"}
+      .row
+        .col-md-2.col-md-offset-5
+          = link_to auth_path(provider: 'twitter'), class: "btn btn-info btn-block social-login-button" do
+            %i.fa.fa-twitter.social-login-icon{"aria-hidden" => "true"}
+      .row
+        .col-md-2.col-md-offset-5
+          = link_to auth_path(provider: 'google_oauth2'), class: "btn btn-danger btn-block social-login-button google-button" do
+            %i.fa.fa-google.social-login-icon{"aria-hidden" => "true"}

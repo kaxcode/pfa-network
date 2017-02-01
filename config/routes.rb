@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   resources :comments
 
-  resources :posts, except: [:index] do
+  resources :posts do
     member do
       get :love
     end
   end
 
   resources :categories do
-    resources :posts, only: [:index]
+    resources :posts
   end
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth
@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   get "welcome/home"
 
   get "welcome/about"
-
-  get "welcome/login"
 
   get "welcome/topics"
 

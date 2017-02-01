@@ -11,5 +11,5 @@
   .row
   - @categories.each do |category|
     .col-md-6
-      %a.button
-        = category.name
+      = link_to category_posts_path(category) do
+        %a.button= category.name

@@ -1,6 +1,8 @@
 .post-new-back-button
   .col-md-8.col-md-offset-2
-    %button.btn.btn-large.btn-warning.new-post-back-button.pull-right
-      = link_to 'Back', posts_path
+    .new-post-back-button.pull-right
+      = link_to root_path do
+        %button.btn.btn-large.btn-warning
+          Back
 
 = render 'form'

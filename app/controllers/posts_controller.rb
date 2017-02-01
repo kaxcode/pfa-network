@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
+    @categories = Category.all
   end
 
   # GET /posts/1
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   # GET /posts/1/edit
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    @categories = Category.all
 
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
@@ -32,6 +35,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
+    @categories = Category.all
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
     else

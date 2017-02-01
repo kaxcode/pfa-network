@@ -11,19 +11,13 @@
   .post-new-form
     .col-md-8.col-md-offset-2
       .btn-group
-        %button.btn.btn-large.btn-info Category
-        %button.btn.btn-large.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
-          %span.caret
+        %button.btn.btn-info.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          %span#selected Choose Topic &nbsp;
+          %span.i.fa.fa-chevron-down{"aria-hidden" => "true"}
         %ul.dropdown-menu
-          %li
-            %a{:href => "#"} Action
-          %li
-            %a{:href => "#"} Another action
-          %li
-            %a{:href => "#"} Something else here
-          %li.divider
-          %li
-            %a{:href => "#"} Separated link
+          - @categories.each do |category|
+            %li
+              = content_tag(:a, category.name)
       .form-group.post-new-form-title
         %label.h2{:for => "title"} Title:
         %textarea#comment.form-control{:rows => "1"}

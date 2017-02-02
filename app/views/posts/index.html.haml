@@ -1,5 +1,17 @@
 -# Posts
 -# =============================================
+.col-md-5.col-xs-4.top-category-post-index-box
+  .admin-editing-tools-box.new-category-admin-box
+    - if current_user_admin?
+      = link_to new_category_path do
+        %button.btn.btn-large.btn-success
+          New
+    = link_to root_path do
+      %button.btn.btn-large.btn-warning
+        Back
+.col-md-7.col-xs-8.top-category-post-index-box
+  .h2.post-category-name
+    =@category.name
 .row
   - @posts.each do |post|
     .col-md-8.col-md-offset-2

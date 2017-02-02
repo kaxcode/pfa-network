@@ -16,28 +16,37 @@
 
 // Media Queries
 /* iPhone 5 (portrait)----------- */
-// @media only screen
-//   and (min-device-width: 320px)
-//   and (max-device-height: 568px)
-//   and (orientation: portrait) {
-//
-// }
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-height: 568px)
+  and (orientation: portrait) {
+  .post-category-name {
+    margin-top: 5px;
+    margin-left: -15px;
+  }
+}
 
 /* iPhone 6 (portrait)----------- */
-// @media only screen
-//   and (min-device-width: 375px)
-//   and (max-device-height: 667px)
-//   and (orientation: portrait) {
-//
-// }
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-height: 667px)
+  and (orientation: portrait) {
+  .post-category-name {
+    margin-top: 5px;
+    margin-left: -15px;
+  }
+}
 
 /* iPhone 6+ (portrait) ----------- */
-// @media only screen
-//   and (min-device-width: 414px)
-//   and (max-device-height: 736px)
-//   and (orientation: portrait) {
-//
-// }
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-height: 736px)
+  and (orientation: portrait) {
+  .post-category-name {
+    margin-top: 5px;
+    margin-left: -15px;
+  }
+}
 
 /* iPads (portrait) ------ */
 @media only screen
@@ -46,6 +55,14 @@
   and (orientation: portrait) {
   .index-post-box {
     margin-top: 20px;
+  }
+
+  .top-category-post-index-box {
+    margin-top: 70px;
+  }
+
+  .post-category-name {
+    margin-top: 5px;
   }
 }
 
@@ -56,6 +73,14 @@
   and (orientation: landscape) {
   .index-post-box {
     margin-top: 20px;
+  }
+
+  .top-category-post-index-box {
+    margin-top: 75px;
+  }
+
+  .post-category-name {
+    margin-top: 0;
   }
 }
 
@@ -70,12 +95,22 @@
   .jumbotron {
     height: 550px;
   }
+
+  .new-category-admin-box {
+    padding-left: 180px;
+  }
+
+  .post-category-name {
+    margin-top: 0;
+  }
 }
 
 /* Samsung Galaxy S5 ----------- */
-// @media only screen
-//   and (min-device-width: 360px)
-//   and (max-device-height: 640px)
-//   and (orientation: portrait) {
-//
-// }
+@media only screen
+  and (min-device-width: 360px)
+  and (max-device-height: 640px)
+  and (orientation: portrait) {
+  .post-category-name {
+    margin-top: 0;
+  }
+}

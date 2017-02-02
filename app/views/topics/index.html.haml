@@ -12,7 +12,7 @@
       %button.btn.btn-large.btn-warning
         Back
 .container
-  - @categories.each do |topic|
+  - @topics.each do |topic|
     .col-md-6
       = link_to topic_posts_path(topic), class: "btn button btn-block event-button" do
         %span.topic-button-name= topic.name

@@ -1,4 +1,4 @@
-class topicsController < ApplicationController
+class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :admin!, except: [:index, :post, :love]
 

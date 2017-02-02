@@ -52,6 +52,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
+    @topic = Topic.find(params[:topic_id])
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 

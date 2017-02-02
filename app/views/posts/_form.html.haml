@@ -6,7 +6,7 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  -# New Post Category Dropdown
+  -# New Post Topic Dropdown
   -# =============================================
   .post-new-form
     .col-md-8.col-md-offset-2
@@ -14,11 +14,11 @@
         %button.btn.btn-info.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           %span#selected Choose Topic &nbsp;
           %span.i.fa.fa-chevron-down{"aria-hidden" => "true"}
-        %ul.dropdown-menu.category-dropdown-menu
-          - @categories.each do |category|
-            %li{data: {id: category.id}}
-              = content_tag(:a, category.name)
-        = f.select :category_id, options_from_collection_for_select(@categories, :id, :name)
+        %ul.dropdown-menu.topic-dropdown-menu
+          - @topics.each do |topic|
+            %li{data: {id: topic.id}}
+              = content_tag(:a, topic.name)
+        = f.select :topic_id, options_from_collection_for_select(@topics, :id, :name)
       .form-group.post-new-form-title
         = f.label :title
         = f.text_area :title, class: "form-control", rows: "1"

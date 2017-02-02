@@ -1,8 +1,8 @@
 $(document).on("turbolinks:load", function(){
- $(".category-dropdown-menu li").click(function() {
+ $(".topic-dropdown-menu li").click(function() {
    var id = $(this).data("id");
 
-   $("#post_category_id").val(id);
+   $("#post_topic_id").val(id);
  })
 
    $(".dropdown-menu li a").click(function(){

@@ -20,7 +20,7 @@
   and (min-device-width: 320px)
   and (max-device-height: 568px)
   and (orientation: portrait) {
-  .post-category-name {
+  .post-topic-name {
     margin-top: 5px;
     margin-left: -15px;
   }
@@ -31,7 +31,7 @@
   and (min-device-width: 375px)
   and (max-device-height: 667px)
   and (orientation: portrait) {
-  .post-category-name {
+  .post-topic-name {
     margin-top: 5px;
     margin-left: -15px;
   }
@@ -42,7 +42,7 @@
   and (min-device-width: 414px)
   and (max-device-height: 736px)
   and (orientation: portrait) {
-  .post-category-name {
+  .post-topic-name {
     margin-top: 5px;
     margin-left: -15px;
   }
@@ -57,11 +57,11 @@
     margin-top: 20px;
   }
 
-  .top-category-post-index-box {
+  .top-topic-post-index-box {
     margin-top: 70px;
   }
 
-  .post-category-name {
+  .post-topic-name {
     margin-top: 5px;
   }
 
@@ -79,11 +79,11 @@
     margin-top: 20px;
   }
 
-  .top-category-post-index-box {
+  .top-topic-post-index-box {
     margin-top: 75px;
   }
 
-  .post-category-name {
+  .post-topic-name {
     margin-top: 0;
   }
 
@@ -104,11 +104,11 @@
     height: 550px;
   }
 
-  .new-category-admin-box {
+  .new-topic-admin-box {
     padding-left: 180px;
   }
 
-  .post-category-name {
+  .post-topic-name {
     margin-top: 0;
   }
 }
@@ -118,7 +118,7 @@
   and (min-device-width: 360px)
   and (max-device-height: 640px)
   and (orientation: portrait) {
-  .post-category-name {
+  .post-topic-name {
     margin-top: 0;
   }
 }

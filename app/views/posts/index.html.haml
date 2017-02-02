@@ -1,21 +1,21 @@
 -# Posts
 -# =============================================
-.col-md-5.col-xs-4.top-category-post-index-box
-  .admin-editing-tools-box.new-category-admin-box
+.col-md-5.col-xs-4.top-topic-post-index-box
+  .admin-editing-tools-box.new-topic-admin-box
     - if current_user_admin?
-      = link_to new_category_path do
+      = link_to new_topic_path do
         %button.btn.btn-large.btn-success
           New
     = link_to root_path do
       %button.btn.btn-large.btn-warning
         Back
-.col-md-7.col-xs-8.top-category-post-index-box
-  .h2.post-category-name
-    =@category.name
+.col-md-7.col-xs-8.top-topic-post-index-box
+  .h2.post-topic-name
+    =@topic.name
 .row
   - @posts.each do |post|
     .col-md-8.col-md-offset-2
-      = link_to [post.category, post], class: "post-link-hover" do
+      = link_to [post.topic, post], class: "post-link-hover" do
         .table-responsive.table.table.table-striped.table-bordered.post-link-hover
           %td.post-link-hover
             %p.post-link-hover

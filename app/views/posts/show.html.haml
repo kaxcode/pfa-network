@@ -17,10 +17,10 @@
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
         %span Count
       .user-editing-tools-box
-        = link_to category_posts_path do
+        = link_to topic_posts_path do
           %button.btn.btn-large.btn-warning
             Back
-        = link_to edit_category_post_path(@post) do
+        = link_to edit_topic_post_path(@post) do
           %button.btn.btn-large.btn-success
             Edit
         = link_to @post, :method => :delete, :data => { :confirm => 'Are you sure?' } do

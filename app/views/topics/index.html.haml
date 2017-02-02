@@ -1,18 +1,18 @@
 .categoy-index
   .row
     .col-md-12.text-center.topic-selection-text
-      .h1 Select a category
+      .h1 Select a topic
 .admin-editing-tools-box
   .col-md-12.text-center
     - if current_user_admin?
-      = link_to new_category_path do
+      = link_to new_topic_path do
         %button.btn.btn-large.btn-success
           New
     = link_to root_path do
       %button.btn.btn-large.btn-warning
         Back
 .container
-  - @categories.each do |category|
+  - @categories.each do |topic|
     .col-md-6
-      = link_to category_posts_path(category), class: "btn button btn-block event-button" do
-        %span.category-button-name= category.name
+      = link_to topic_posts_path(topic), class: "btn button btn-block event-button" do
+        %span.topic-button-name= topic.name

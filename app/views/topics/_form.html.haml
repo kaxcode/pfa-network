@@ -1,15 +1,15 @@
-= form_for @category do |f|
-  - if @category.errors.any?
+= form_for @topic do |f|
+  - if @topic.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+      %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
       %ul
-        - @category.errors.full_messages.each do |msg|
+        - @topic.errors.full_messages.each do |msg|
           %li= msg
 
   .post-new-form
     .col-md-8.col-md-offset-2
-      .form-group.category-new-form-title
-        .h2 Category Name
+      .form-group.topic-new-form-title
+        .h2 Topic Name
         .catergory-name-input-box
           = f.text_field :name, class: 'form-control'
       .form-group.catergory-save-button

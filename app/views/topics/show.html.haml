@@ -2,12 +2,12 @@
 
 %p
   %b Name:
-  = @category.name
-  
+  = @topic.name
+
 .admin-editing-tools-box
-= link_to edit_category_path do
+= link_to edit_topic_path do
   %button.btn.btn-large.btn-success
     Edit
-= link_to @category, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+= link_to @topic, :method => :delete, :data => { :confirm => 'Are you sure?' } do
   %button.btn.btn-large.btn-danger
     Delete

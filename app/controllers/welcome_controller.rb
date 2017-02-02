@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def home
     @posts = Post.all
-    @categories = Category.all
+    @topics = Topic.all
   end
 end

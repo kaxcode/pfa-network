@@ -4,32 +4,32 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @category = Category.find(params[:category_id])
-    @posts = @category.posts
+    @topic = Topic.find(params[:topic_id])
+    @posts = @topic.posts
   end
 
   # GET /posts/1
   def show
-    @category = Category.find(params[:category_id])
-    @posts = @category.posts
+    @topic = Topic.find(params[:topic_id])
+    @posts = @topic.posts
   end
 
   # GET /posts/new
   def new
     @post = Post.new
-    @categories = Category.all
+    @topics = Topic.all
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.new
-    @categories = Category.all
+    @topics = Topic.all
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
-    @categories = Category.all
+    @topics = Topic.all
     @post.user = current_user
 
     if @post.save
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    @categories = Category.all
+    @topics = Topic.all
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
     else
@@ -63,6 +63,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body, :category_id)
+      params.require(:post).permit(:title, :body, :post_id)
     end
 end

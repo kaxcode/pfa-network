@@ -1,25 +1,21 @@
 -# Posts
 -# =============================================
-.row
+.post-show-row
   .col-md-8.col-md-offset-2
     .show-post-box.post-link-hover
-      .table-responsive.post-link-hover
-        %table.table.table-striped.table-bordered.post-link-hover
-          %tr.post-link-hover
-            %td.post-link-hover
-              %p.post-link-hover
-                = @post.user.name
-              %p.post-link-hover
-                = @post.created_at
-              %h1.post-link-hover
-                = @post.title
-              %p
-                = @post.body
-              %p.comment_count_heart
-                %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-                %span Count
-                %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-                %span Count
+      %p.post-link-hover
+        = @post.user.name
+      %p.post-link-hover
+        = @post.created_at
+      %h1.post-link-hover
+        = @post.title
+      %p
+        = @post.body
+      %p.comment_count_heart
+        %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+        %span Count
+        %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+        %span Count
       .user-editing-tools-box
         = link_to category_posts_path do
           %button.btn.btn-large.btn-warning

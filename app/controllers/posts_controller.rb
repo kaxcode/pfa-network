@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate!, except: [:index]
+  before_action :authenticate!, except: [:index, :show]
 
   # GET /posts
   def index
@@ -10,6 +10,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @category = Category.find(params[:category_id])
+    @posts = @category.posts
   end
 
   # GET /posts/new
@@ -20,6 +22,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.new
+    @categories = Category.all
   end
 
   # POST /posts

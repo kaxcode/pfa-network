@@ -1,91 +1,43 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
-    %title Polk Family Autism Network
-
-    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => "", :name => "description"}/
-    %meta{:content => "", :name => "keywords"}/
-    %meta{:content => "", :name => "author"}/
-
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-
-  %body
-
-    -# Header
-    -# =============================================
-    %nav.navbar.navbar-inverse
-      .container.nav-box
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand
-            PFAN
-        .collapse.navbar-collapse.top-nav
-          %ul.nav.navbar-nav
-          %form.navbar-form.navbar-right
-            .form-group.search-box
-              %input.form-control.input{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default.search{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li.write-pos
-              = link_to "Write a post", root_path
-            %li.navbar-text
-              Sign in / Sign up
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav.bottom-nav
-            %li
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#"} Topics
-            %li
-              %a{:href => "#"} About
-    -# User Show
-    -# =============================================
-    .container-fluid.big-user-box
-      .row
-        .col-md-12
+-# User Show
+-# =============================================
+.container-fluid.big-user-box
+  .row
+    .col-md-12
+      .user-box
+        .col-md-3
           .user-box
-            .col-md-3
-              .user-box
-                .thumbnail
-                  .caption
-                    %p Name
-                    %p Messages
-                    %p Likes
+            .thumbnail
+              .caption
+                %p Name
+                %p Messages
+                %p Likes
 
-            .col-md-8
-              %table.table.table-striped.table-bordered.table-hover
-                %tbody
-                  %tr
-                    %td.user-posts-list
-                      %h5.user-name-box User Name
-                      %p.published-time Post Publish Time
-                      %h1 First Post
-                      %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
-                      .comment_count_heart
-                        %span.heart-count
-                          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-                          %span.p Count &nbsp;
-                        %span.comment-count
-                          %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-                          %span.p Count
-                  %tr
-                    %td
-                      %h5.user-name-box User Name
-                      %p.published-time Post Publish Time
-                      %h1 First Post
-                      %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
-                      .comment_count_heart
-                        %span.heart-count
-                          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-                          %span.p Count &nbsp;
-                        %span.comment-count
-                          %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-                          %span.p Count
+        .col-md-8
+          %table.table.table-striped.table-bordered.table-hover
+            %tbody
+              %tr
+                %td.user-posts-list
+                  %h5.user-name-box User Name
+                  %p.published-time Post Publish Time
+                  %h1 First Post
+                  %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
+                  .comment_count_heart
+                    %span.heart-count
+                      %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+                      %span.p Count &nbsp;
+                    %span.comment-count
+                      %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+                      %span.p Count
+              %tr
+                %td
+                  %h5.user-name-box User Name
+                  %p.published-time Post Publish Time
+                  %h1 First Post
+                  %p.post-text Cheesecake biscuit jelly beans brownie. Jelly-o toffee cake wafer. Gummi bears liquorice toffee sesame snaps caramels gummi bears. Dessert jelly-o jujubes. Liquorice bear claw candy bonbon lemon drops. Macaroon tart donut powder marshmallow.
+                  .comment_count_heart
+                    %span.heart-count
+                      %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+                      %span.p Count &nbsp;
+                    %span.comment-count
+                      %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+                      %span.p Count

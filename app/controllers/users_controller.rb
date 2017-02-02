@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :admin!
+  before_action :admin!
 
   def edit
     @user = User.find(params[:id])

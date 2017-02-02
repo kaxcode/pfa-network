@@ -3,12 +3,14 @@
     .col-md-12.text-center.topic-selection-text
       .h1 Select a category
 .admin-editing-tools-box
-  = link_to new_category_path do
-    %button.btn.btn-large.btn-success
-      New
-  = link_to root_path do
-    %button.btn.btn-large.btn-warning
-      Back
+  .col-md-12.text-center
+    - if current_user_admin?
+      = link_to new_category_path do
+        %button.btn.btn-large.btn-success
+          New
+    = link_to root_path do
+      %button.btn.btn-large.btn-warning
+        Back
 .container
   - @categories.each do |category|
     .col-md-6

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  # before_action :admin!
+  before_action :admin!, except: [:index, :post, :love]
 
   # GET /categories
   def index

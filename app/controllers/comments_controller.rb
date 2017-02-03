@@ -21,14 +21,26 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    @comment.user_id = current_user
 
     if @comment.save
-      redirect_to @comment, notice: 'Comment was successfully created.'
+      redirect_to topic_posts_path(@post)
     else
       render :new
     end
   end
+
+  # def create
+  #   @comment = Comment.new(comment_params)
+  #
+  #   if @comment.save
+  #     redirect_to @comment, notice: 'Comment was successfully created.'
+  #   else
+  #     render :new
+  #   end
+  # end
 
   # PATCH/PUT /comments/1
   def update
@@ -53,6 +65,6 @@ class CommentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:comment_body)
+      params.require(:comment).permit(:comment_body, :user_id, :post_id)
     end
 end

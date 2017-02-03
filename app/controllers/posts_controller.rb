@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate!, except: [:index, :show]
-  before_action :find_post, only: [:index, :show]
+  before_action :find_post, only: [:index, :show, :update]
   # GET /posts
   def index
   end
 
-  # GET /posts/1
+  # GET /posts/1x
   def show
   end
 
@@ -18,8 +18,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.new
-    @topics = Topic.all
   end
 
   # POST /posts
@@ -36,8 +34,14 @@ class PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
+  # def update
+	# 	if @post.update(post_params)
+	# 		redirect_to [@post.topic, @post]
+	# 	else
+	# 		render 'edit'
+	# 	end
+	# end
   def update
-    @topics = Topic.all
     if @post.update(post_params)
       redirect_to [@post.topic, @post], notice: 'Post was successfully updated.'
     else
@@ -59,7 +63,7 @@ class PostsController < ApplicationController
 
     def find_post
       @topic = Topic.find(params[:topic_id])
-      @posts = @topic.posts
+      @posts = @topic.posts.order("created_at DESC")
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -22,8 +22,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.new
     @topics = Topic.all
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.find(params[:id])
   end
 
   # POST /posts

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :comments
 
   resources :topics do
     resources :posts do
+      resources :comments
+
       member do
         get :loves
       end

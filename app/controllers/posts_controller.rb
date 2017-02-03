@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to [@post.topic, @post], notice: 'Post was successfully created.'
     else
       render :new
     end
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   def update
     @topics = Topic.all
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to [@post.topic, @post], notice: 'Post was successfully updated.'
     else
       render :edit
     end
@@ -52,8 +52,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    @topic = Topic.find(params[:topic_id])
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to root_url, notice: 'Post was successfully destroyed.'
   end
 
   private
@@ -64,6 +63,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :body, :post_id)
+      params.require(:post).permit(:title, :body, :topic_id)
     end
 end

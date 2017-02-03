@@ -21,10 +21,10 @@
             %p.post-link-hover
             = post.user.name
             %p.post-link-hover
-            = post.created_at
+            = distance_of_time_in_words_to_now(post.created_at)
             %h1.post-link-hover
               = post.title
-            %p=post.body
+            %p= (post.body).truncate(200)
             %p.comment_count_heart
               %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
               %span Count

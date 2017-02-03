@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate!, except: [:index, :show]
-  before_action :find_post, only: [:index, :show, :heart]
+  before_action :find_post, only: [:new, :index, :show, :heart]
   # GET /posts
   def index
   end
@@ -45,15 +45,16 @@ class PostsController < ApplicationController
     end
   end
 
-  # likes/hearts feature
-  def heart
-    if @post.not_loved_already?(current_user)
-      @post.loves.create(user: current_user)
-      redirect_to [@post.topic, @post]
+  # loves/hearts feature
+  def love
+    @topic = Topic.find(params[:topic_id])
+    @topic = @topic.posts.find(params[:id])
+    if @topic.loves.where(love: true, user: current_user).count == 0
+      @item.loves.create(love: true, user: current_user)
     else
-      @post.loves.where(user: current_user).delete_all
-      redirect_to [@post.topic, @post]
+      @item.loves.where(user: current_user).destroy_all
     end
+    redirect_to topic_post_path(@topic)
   end
 
   # DELETE /posts/1

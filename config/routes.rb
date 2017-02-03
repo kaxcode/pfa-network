@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
+  resources :users
 
   resources :topics do
     resources :posts do
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :posts, only: [:new]
+  resources :topics
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth
   get  '/auth/:provider/callback' => 'session#create'

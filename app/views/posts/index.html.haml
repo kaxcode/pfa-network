@@ -26,7 +26,7 @@
               = post.title
             %p= (post.body).truncate(200)
             %p.comment_count_heart
-              %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-              %span Count
+              %span.i.fa.fa-heart
+                = post.loves.count
               %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
               %span Count

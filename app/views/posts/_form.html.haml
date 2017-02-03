@@ -16,7 +16,6 @@
           %span.i.fa.fa-chevron-down{"aria-hidden" => "true"}
         %ul.dropdown-menu.topic-dropdown-menu
           - @topics.each do |topic|
-          - debug(:topic_id)
             %li{data: {id: topic.id}}
               = content_tag(:a, topic.name)
           = f.select :topic_id, options_from_collection_for_select(@topics, :id, :name)

@@ -4,14 +4,12 @@ Rails.application.routes.draw do
 
   resources :topics do
     resources :posts do
+      resources :comments
       member do
-        get :love
+        get :loves
       end
     end
   end
-
-  resources :posts, only: [:new]
-  resources :topics
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth
   get  '/auth/:provider/callback' => 'session#create'

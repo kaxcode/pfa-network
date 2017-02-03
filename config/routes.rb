@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   resources :comments
 
-  resources :posts do
-    member do
-      get :love
-    end
-  end
-
   resources :topics do
-    resources :posts
+    resources :posts do
+      member do
+        get :loves
+      end
+    end
   end
 
   get  '/auth/:provider'          => 'omniauth#auth', as: :auth

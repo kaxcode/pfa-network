@@ -20,9 +20,9 @@
         = link_to topic_posts_path do
           %button.btn.btn-large.btn-warning
             Back
-        = link_to edit_topic_post_path(@post) do
+        = link_to edit_topic_post_path([@topic, @post]) do
           %button.btn.btn-large.btn-success
             Edit
-        = link_to @post, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+        = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
           %button.btn.btn-large.btn-danger
             Delete

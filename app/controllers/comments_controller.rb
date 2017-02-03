@@ -1,60 +1,41 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate!, except: [:create]
 
-  # GET /comments
-  def index
-    @comments = Comment.all
-  end
-
-  # GET /comments/1
-  def show
-  end
-
-  # GET /comments/new
-  def new
-    @comment = Comment.new
-  end
-
-  # GET /comments/1/edit
-  def edit
-  end
-
-  # POST /comments
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
-    @comment.user_id = current_user
+    @comment = @post.comments.create(params[:comment].permit(:comment))
+    @comment.user_id = current_user.id if current_user
+    @comment.save
 
     if @comment.save
-      redirect_to topic_posts_path(@post)
+      redirect_to post_path(@post)
     else
-      render :new
+      render 'new'
     end
   end
 
-  # def create
-  #   @comment = Comment.new(comment_params)
-  #
-  #   if @comment.save
-  #     redirect_to @comment, notice: 'Comment was successfully created.'
-  #   else
-  #     render :new
-  #   end
-  # end
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
 
-  # PATCH/PUT /comments/1
   def update
-    if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+
+    if @comment.update(params[:comment].permit(:comment))
+      redirect_to post_path(@post)
     else
-      render :edit
+      render 'edit'
     end
   end
 
-  # DELETE /comments/1
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     @comment.destroy
-    redirect_to comments_url, notice: 'Comment was successfully destroyed.'
+    redirect_to post_path(@post)
   end
 
   private

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate!, except: [:index, :show]
-  before_action :find_post, only: [:index, :show]
+  before_action :find_post, only: [:index, :show, :heart]
   # GET /posts
   def index
   end
@@ -42,6 +42,17 @@ class PostsController < ApplicationController
       redirect_to [@post.topic, @post], notice: 'Post was successfully updated.'
     else
       render :edit
+    end
+  end
+
+  # likes/hearts feature
+  def heart
+    if @post.not_loved_already?(current_user)
+      @post.loves.create(user: current_user)
+      redirect_to [@post.topic, @post]
+    else
+      @post.loves.where(user: current_user).delete_all
+      redirect_to [@post.topic, @post]
     end
   end
 

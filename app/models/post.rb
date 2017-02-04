@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :loves
 
-  def not_loved_already?(user)
-    loves.where(user: user).count == 0
-  end
+  # def not_loved_already?(user)
+  #   # loves.where(user: user).count == 0
+  # end
 end

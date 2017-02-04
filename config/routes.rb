@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments
       member do
-        get :loves
+        get :love
       end
     end
   end

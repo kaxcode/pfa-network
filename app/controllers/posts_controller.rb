@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate!, except: [:index, :show, :love]
+  before_action :authenticate!, except: [:index, :show, :like]
 
   # GET /posts
   def index
@@ -56,14 +56,14 @@ class PostsController < ApplicationController
     redirect_to root_url, notice: 'Post was successfully destroyed.'
   end
 
-  def love
+  def like
     @topic = Topic.find(params[:topic_id])
 
     @post = @topic.posts.find(params[:id])
-    if @post.loves.where(love: true, user: current_user).count == 0
-      @post.loves.create(love: true, user: current_user)
+    if @post.likes.where(like: true, user: current_user).count == 0
+      @post.likes.create(like: true, user: current_user)
     else
-      @post.loves.where(user: current_user).destroy_all
+      @post.likes.where(user: current_user).destroy_all
     end
     redirect_to topic_posts_path(@topic)
   end

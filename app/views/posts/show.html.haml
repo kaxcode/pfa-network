@@ -12,7 +12,7 @@
       %p
         = @post.body
       %p.comment_count_heart
-        = link_to love_topic_post_path([@topic, @post]) do
+        = link_to like_topic_post_path([@topic, @post]) do
           %span.i.fa.fa-heart
       -# %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
       -# %span Count

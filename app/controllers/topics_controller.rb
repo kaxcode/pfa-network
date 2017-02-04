@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  before_action :admin!, except: [:index, :post, :love]
+  before_action :admin!, except: [:index, :post, :like]
 
   # GET /topics
   def index

@@ -32,8 +32,15 @@
       %h3 Leave a comment
       = form_for [@topic, @post, @post.comments.new] do |f|
         = f.text_area :comment_body, class: "form-control", rows: "2"
-        = f.submit class: 'btn btn-info', value: "Create Comment"
+        = f.submit class: 'btn btn-success pull-right', value: "Create Comment"
         .comment-list-box
           - @post.comments.each do |comment|
-            %p
-              = comment.comment_body
+            .table-responsive.table.table.table-striped.table-bordered.post-link-hover
+              .comment-user-info
+                %span.p
+                = comment.user_id
+                |
+                %span.p
+                = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+              %p
+                = comment.comment_body

@@ -20,20 +20,20 @@
         = link_to topic_posts_path do
           %button.btn.btn-large.btn-warning
             Back
-        = link_to edit_topic_post_path([@topic, @post]) do
-          %button.btn.btn-large.btn-success
-            Edit
-        = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
-          %button.btn.btn-large.btn-danger
-            Delete
--# .comments-box
--#   .col-md-8.col-md-offset-2
-    -# %h3 Leave a comment
-      .post-user-info
-        %span.p User Name
-        %span.p Post Publish Time
+        -if users_post?
+          = link_to edit_topic_post_path([@topic, @post]) do
+            %button.btn.btn-large.btn-success
+              Edit
+          = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+            %button.btn.btn-large.btn-danger
+              Delete
+  .comments-box
+    .col-md-8.col-md-offset-2
+      %h3 Leave a comment
       = form_for [@topic, @post, @post.comments.new] do |f|
-        = f.text_area :comment_body
-        = f.submit
-    -# - @post.comments.each do |comment|
-    -#   = comment.comment_body
+        = f.text_area :comment_body, class: "form-control", rows: "2"
+        = f.submit class: 'btn btn-info', value: "Create Comment"
+        .comment-list-box
+          - @post.comments.each do |comment|
+            %p
+              = comment.comment_body

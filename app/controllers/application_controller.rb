@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_admin?
 
   def users_post?
-    current_user = @post.user_id
+    current_user == @post.user
   end
   helper_method :users_post?
 end

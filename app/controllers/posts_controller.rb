@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
 
     if params[:search].present?
-      @posts = @topic.posts.order("created_at DESC").where("title LIKE ?", "%#{params[:search]}%")
+      @posts = @topic.posts.order("created_at DESC").where("body LIKE ?", "%#{params[:search]}%")
     else
       @posts = @topic.posts.order("created_at DESC")
     end

@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   $('.search-button').click(function(event) {
     event.preventDefault()
-    var search_input = $('.search-input').val()
+    var search_input = $('.search-posts').val()
     console.log(search_input)
     $.ajax({
       url: '/posts',

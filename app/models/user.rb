@@ -12,9 +12,9 @@ class User < ApplicationRecord
     Rails.logger.debug "The user is #{user.inspect}"
 
     user.name         = authentication_data.info.name
+    user.email        = authentication_data.info.email
     user.nickname     = authentication_data.info.nickname
     user.access_token = authentication_data.info.access_token
-    user.email        = authentication_data.info.email
     user.save!
 
     Rails.logger.debug "After saving, the user is #{user.inspect}"
@@ -23,6 +23,7 @@ class User < ApplicationRecord
   end
 
   after_create :subscribe_user_to_mailing_list
+  after_create :send_welcome_email_to_user
 
   private
 

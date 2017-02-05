@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @topic = Topic.find(params[:topic_id])
-    @posts = @topic.posts
+
+    if params[:search].present?
+      @posts = @topic.posts.order("created_at DESC").where("title LIKE ?", "%#{params[:search]}%")
+    else
+      @posts = @topic.posts.order("created_at DESC")
+    end
   end
 
   # GET /posts/1

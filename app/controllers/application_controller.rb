@@ -39,5 +39,9 @@ class ApplicationController < ActionController::Base
   def users_post?
     current_user == @post.user
   end
+
+  def users_comment?
+    current_user == @comment.user
+  end
   helper_method :users_post?
 end

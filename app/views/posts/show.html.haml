@@ -33,14 +33,14 @@
       = form_for [@topic, @post, @post.comments.new] do |f|
         = f.text_area :comment_body, class: "form-control", rows: "2"
         = f.submit class: 'btn btn-success pull-right', value: "Create Comment"
-        .comment-list-box
-          - @post.comments.each do |comment|
-            .table-responsive.table.table.table-striped.table-bordered.post-link-hover
-              .comment-user-info
-                %span.p
-                = comment.user_id
-                |
-                %span.p
-                = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
-              %p
-                = comment.comment_body
+      .comment-list-box
+        - @post.comments.each do |comment|
+          .comment-each
+            %p
+            = comment.user_id
+            = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+            %p
+              = comment.comment_body
+            -# = link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" } do
+            -#   %button.btn.btn-large.btn-danger
+            -#     Delete

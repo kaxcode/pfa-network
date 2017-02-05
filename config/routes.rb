@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :users
 
   resources :topics do
     resources :posts do
       resources :comments
-
       member do
-        get :loves
+        get :like
       end
     end
   end

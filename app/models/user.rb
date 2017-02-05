@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
-  has_many :loves
+  has_many :likes
 
   # Factory method to create a user from some omniauth data
   # Omniauth will use this to build a *NEW* user for us

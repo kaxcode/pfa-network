@@ -58,14 +58,14 @@ class PostsController < ApplicationController
 
   def like
     @topic = Topic.find(params[:topic_id])
-
     @post = @topic.posts.find(params[:id])
-    if @post.likes.where(like: true, user: current_user).count == 0
-      @post.likes.create(like: true, user: current_user)
+    if @post.not_liked_already?(current_user)
+      @post.likes.create(user: current_user)
+      redirect_to [@post.topic, @post]
     else
       @post.likes.where(user: current_user).destroy_all
+      redirect_to [@post.topic, @post]
     end
-    redirect_to topic_posts_path(@topic)
   end
 
   private

@@ -12,8 +12,11 @@
       %p
         = @post.body
       %p.comment_count_heart
-        %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-        %span Count
+        = link_to like_topic_post_path([@topic, @post]) do
+          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+          %span
+            = @post.likes.count
+            &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
         %span Count
       .user-editing-tools-box
@@ -23,6 +26,6 @@
         = link_to edit_topic_post_path([@topic, @post]) do
           %button.btn.btn-large.btn-success
             Edit
-        = link_to @post, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+        = link_to [@topic, @post], :method => :delete, :data => { :confirm => 'Are you sure?' } do
           %button.btn.btn-large.btn-danger
             Delete

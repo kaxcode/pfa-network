@@ -40,10 +40,13 @@
         - @post.comments.each do |comment|
           .comment-each
             %p
-            = comment.user_id
-            = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+              = comment.user_id
+              = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
             %p
               = comment.comment_body
-            -# = link_to "Delete", [comment.post, comment], method: :delete, data: { confirm: "Are you sure?" } do
+            = link_to ([@topic, @post, @comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+              %button.btn.btn-large.btn-danger
+                Delete
+            -# = link_to "Delete", [@topic, @postpost.comment], method: :delete, data: { confirm: "Are you sure?" } do
             -#   %button.btn.btn-large.btn-danger
             -#     Delete

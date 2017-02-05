@@ -14,11 +14,19 @@ class User < ApplicationRecord
     user.name         = authentication_data.info.name
     user.nickname     = authentication_data.info.nickname
     user.access_token = authentication_data.info.access_token
-
+    user.email        = authentication_data.info.email
     user.save!
 
     Rails.logger.debug "After saving, the user is #{user.inspect}"
 
     return user
+  end
+
+  after_create :subscribe_user_to_mailing_list
+
+  private
+
+  def subscribe_user_to_mailing_list
+    SubscribeUserToMailingListJob.perform_later(self)
   end
 end

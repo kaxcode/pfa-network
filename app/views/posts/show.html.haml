@@ -13,9 +13,10 @@
         = @post.body
       %p.comment_count_heart
         = link_to like_topic_post_path([@topic, @post]) do
-          %span.i.fa.fa-heart
-      -# %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-      -# %span Count
+          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+          %span
+            = @post.likes.count
+            &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
         %span Count
       .user-editing-tools-box

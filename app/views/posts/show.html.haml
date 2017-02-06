@@ -39,12 +39,11 @@
       .comment-list-box
         - @post.comments.each do |comment|
           .comment-each
-            %p
-              = comment.user_id
-              = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
-            %p
-              = comment.comment_body
-              - if users_comment?
-                = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
-                  %button.btn.btn-large.btn-danger
-                    Delete 
+          %p
+            = comment.user_id
+            = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+          %p
+            = comment.comment_body
+          = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+            %button.btn.btn-large.btn-danger
+              Delete

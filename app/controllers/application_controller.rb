@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   helper_method :users_post?
 
   def users_comment?
-    current_user == @comment.user
+    current_user == @comment.user_id
   end
   helper_method :users_comment?
 end

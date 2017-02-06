@@ -9,6 +9,9 @@
     = link_to root_path do
       %button.btn.btn-large.btn-warning
         Back
+    = link_to new_topic_post_path do
+      %button.btn.btn-large.btn-success
+        Write a Post
 .col-md-7.col-xs-8.top-topic-post-index-box
   .h2.post-topic-name
     =@topic.name

@@ -2,10 +2,6 @@
 -# =============================================
 .col-md-5.col-xs-4.top-topic-post-index-box
   .admin-editing-tools-box.new-topic-admin-box
-    - if current_user_admin?
-      = link_to new_topic_path do
-        %button.btn.btn-large.btn-success
-          New
     = link_to root_path do
       %button.btn.btn-large.btn-warning
         Back
@@ -34,4 +30,6 @@
                 = post.likes.count
                 &nbsp;
               %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-              %span Count
+              %span
+                = [@post, @comments].count
+                &nbsp;

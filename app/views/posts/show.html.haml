@@ -21,7 +21,9 @@
             = @post.likes.count
             &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-        %span Count
+        %span
+          = @post.comments.count
+          &nbsp;
       .user-editing-tools-box
         = link_to topic_posts_path do
           %button.btn.btn-large.btn-warning

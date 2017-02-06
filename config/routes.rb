@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :users
 
+  get '/search' => 'search#index', as: :search
+
   resources :topics do
     resources :posts do
       resources :comments

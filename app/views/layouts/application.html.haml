@@ -29,10 +29,10 @@
             PFAN
         .collapse.navbar-collapse.top-nav
           %ul.nav.navbar-nav
-          %form.navbar-form.navbar-right
+          %form.navbar-form.navbar-right{action: search_path}
             .form-group.search-box
-              %input.form-control.input{:placeholder => "Search", :type => "text"}/
-            %button.btn.btn-default.search{:type => "submit"} Submit
+              %input.form-control.search-posts{:name => "search", :placeholder => "Search", :type => "text"}/
+            %button.btn.btn-default.search-button{:type => "submit"} Submit
           %ul.nav.navbar-nav
             %li
               = link_to "Topic", topics_path

@@ -11,25 +11,5 @@
   .col-md-8.topic-name-in-index-box
     .h2.topic-name-in-post-index
       =@topic.name
-.row.posts-index
-  - @posts.each do |post|
-    .col-md-8.col-md-offset-2
-      = link_to [post.topic, post], class: "post-link-hover" do
-        .table-responsive.table.table.table-striped.table-bordered.post-link-hover
-          %td.post-link-hover
-            %p.post-link-hover
-            = post.user.name
-            %p.post-link-hover
-            = distance_of_time_in_words_to_now(post.created_at)
-            %h1.post-link-hover
-              = post.title
-            %p= (post.body).truncate(200)
-            %p.comment_count_heart
-              %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-              %span
-                = post.likes.count
-                &nbsp;
-              %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-              %span
-                = [@post, @comments].count
-                &nbsp;
+.row
+  = render @posts

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @topic = Topic.find(params[:topic_id])
-    @posts = @topic.posts
+    @posts = @topic.posts.order("created_at DESC")
   end
 
   # GET /posts/1

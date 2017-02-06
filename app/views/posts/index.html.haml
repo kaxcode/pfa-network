@@ -1,17 +1,17 @@
 -# Posts
 -# =============================================
-.col-md-5.col-xs-4.top-topic-post-index-box
-  .admin-editing-tools-box.new-topic-admin-box
-    = link_to root_path do
+.admin-editing-tools-box.new-topic-admin-box
+  .col-md-4.post-index-top-nav
+    = link_to topics_path do
       %button.btn.btn-large.btn-warning
         Back
     = link_to new_topic_post_path do
       %button.btn.btn-large.btn-success
         Write a Post
-.col-md-7.col-xs-8.top-topic-post-index-box
-  .h2.post-topic-name
-    =@topic.name
-.row
+  .col-md-8.topic-name-in-index-box
+    .h2.topic-name-in-post-index
+      =@topic.name
+.row.posts-index
   - @posts.each do |post|
     .col-md-8.col-md-offset-2
       = link_to [post.topic, post], class: "post-link-hover" do

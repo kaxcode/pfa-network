@@ -27,9 +27,6 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
-#Summernote
-gem 'summernote-rails', '~> 0.8.2.0'
-
 # Authentication via oauth
 gem 'omniauth'
 gem 'omniauth-twitter'

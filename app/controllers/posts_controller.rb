@@ -16,13 +16,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   def show
     @topic = Topic.find(params[:topic_id])
-    @posts = @topic.posts
+    @post = @topic.posts.find(params[:id])
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
     @topics = Topic.all
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.new
   end
 
   # GET /posts/1/edit
@@ -32,7 +33,6 @@ class PostsController < ApplicationController
     @post = @topic.posts.find(params[:id])
   end
 
-  # POST /posts
   def create
     @post = Post.new(post_params)
     @topics = Topic.all
@@ -59,6 +59,19 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_url, notice: 'Post was successfully destroyed.'
+  end
+
+  # Users like for posts
+  def like
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.find(params[:id])
+    if @post.not_liked_already?(current_user)
+      @post.likes.create(user: current_user)
+      redirect_to [@post.topic, @post]
+    else
+      @post.likes.where(user: current_user).destroy_all
+      redirect_to [@post.topic, @post]
+    end
   end
 
   private

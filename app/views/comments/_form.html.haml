@@ -6,8 +6,8 @@
         - @comment.errors.full_messages.each do |msg|
           %li= msg
 
+
   .field
-    = f.label :comment_body
-    = f.text_area :comment_body
+    = f.input:comment_body
   .actions
     = f.submit 'Save'

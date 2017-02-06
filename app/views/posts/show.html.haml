@@ -10,19 +10,46 @@
       %h1.post-link-hover
         = @post.title
       %p
+      - if @post.body.include?("https:")||@post.body.include?("http:")
+        = link_to @post.body, @post.body
+      - else
         = @post.body
       %p.comment_count_heart
-        %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-        %span Count
+        = link_to like_topic_post_path([@topic, @post]) do
+          %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+          %span
+            = @post.likes.count
+            &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-        %span Count
+        %span
+          = @post.comments.count
+          &nbsp;
       .user-editing-tools-box
         = link_to topic_posts_path do
           %button.btn.btn-large.btn-warning
             Back
-        = link_to edit_topic_post_path([@topic, @post]) do
-          %button.btn.btn-large.btn-success
-            Edit
-        = link_to @post, :method => :delete, :data => { :confirm => 'Are you sure?' } do
-          %button.btn.btn-large.btn-danger
-            Delete
+        -if users_post?
+          = link_to edit_topic_post_path([@topic, @post]) do
+            %button.btn.btn-large.btn-success
+              Edit
+          = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+            %button.btn.btn-large.btn-danger
+              Delete
+  .comments-box
+    .col-md-8.col-md-offset-2
+      %h3 Leave a comment
+      = form_for [@topic, @post, @post.comments.new] do |f|
+        = f.text_area :comment_body, class: "form-control", rows: "2"
+        = f.submit class: 'btn btn-success pull-right', value: "Create Comment"
+      .comment-list-box
+        - @post.comments.select(&:persisted?).each do |comment|
+          .comment-each
+            %p
+              = comment.user.name
+              = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+            %p
+              = comment.comment_body
+            %p
+              = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %button.btn.btn-large.btn-danger
+                  Delete

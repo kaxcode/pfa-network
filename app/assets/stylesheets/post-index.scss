@@ -14,6 +14,10 @@
   margin-bottom: 5px;
 }
 
+.comment-list-box {
+  margin-top: 60px;
+}
+
 // Media Queries
 /* iPhone 5 (portrait)----------- */
 @media only screen
@@ -23,6 +27,18 @@
   .post-topic-name {
     margin-top: 5px;
     margin-left: -15px;
+  }
+
+  .topic-name-in-index-box {
+    text-align: center;
+  }
+
+  .topic-name-in-post-index {
+    margin-top: 10.5px;
+  }
+
+  .post-index-top-nav {
+    text-align: center;
   }
 }
 
@@ -35,6 +51,18 @@
     margin-top: 5px;
     margin-left: -15px;
   }
+
+  .topic-name-in-index-box {
+    text-align: center;
+  }
+
+  .topic-name-in-post-index {
+    margin-top: 10.5px;
+  }
+
+  .post-index-top-nav {
+    text-align: center;
+  }
 }
 
 /* iPhone 6+ (portrait) ----------- */
@@ -45,6 +73,18 @@
   .post-topic-name {
     margin-top: 5px;
     margin-left: -15px;
+  }
+
+  .topic-name-in-index-box {
+    text-align: center;
+  }
+
+  .topic-name-in-post-index {
+    margin-top: 10.5px;
+  }
+
+  .post-index-top-nav {
+    text-align: center;
   }
 }
 
@@ -68,6 +108,22 @@
   .post-show-row {
     margin-top: 70px;
   }
+
+  .topic-name-in-index-box {
+    text-align: center;
+  }
+
+  .topic-name-in-post-index {
+    margin-top: 10.5px;
+  }
+
+  .post-index-top-nav {
+    text-align: center;
+  }
+
+  .admin-editing-tools-box.new-topic-admin-box {
+    margin-top: 50px;
+  }
 }
 
 /* iPads (landscape) ------ */
@@ -90,6 +146,10 @@
   .post-show-row {
     margin-top: 70px;
   }
+
+  .posts-index {
+    margin-top: 70px;
+  }
 }
 
 
@@ -110,6 +170,14 @@
 
   .post-topic-name {
     margin-top: 0;
+  }
+
+  .topic-name-in-post-index {
+    margin-top: 10px;
+  }
+
+  .topic-name-in-index-box {
+    padding: 0;
   }
 }
 

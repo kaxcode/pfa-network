@@ -40,9 +40,4 @@ class ApplicationController < ActionController::Base
     current_user == @post.user
   end
   helper_method :users_post?
-
-  def users_comment?
-    current_user == @comment.user_id
-  end
-  helper_method :users_comment?
 end

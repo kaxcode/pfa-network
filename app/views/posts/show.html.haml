@@ -10,6 +10,9 @@
       %h1.post-link-hover
         = @post.title
       %p
+      - if @post.body.include?("https:")||@post.body.include?("http:")
+        = link_to @post.body, @post.body
+      - else
         = @post.body
       %p.comment_count_heart
         = link_to like_topic_post_path([@topic, @post]) do

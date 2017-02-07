@@ -9,7 +9,7 @@
     .show-post-box.post-link-hover
       %p.post-link-hover
         = link_to @post.user.name, user_path(@post.user)
-      %p.post-link-hover
+        %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
         = distance_of_time_in_words_to_now(@post.created_at)
       %h1.post-link-hover
         = @post.title
@@ -18,7 +18,7 @@
         = link_to @post.body, @post.body
       - else
         = @post.body
-    .comment_count_heart
+    .show-comment_count_heart
       = link_to like_topic_post_path([@topic, @post]) do
         %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
         %span

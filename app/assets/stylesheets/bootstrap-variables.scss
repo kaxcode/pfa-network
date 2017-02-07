@@ -21,7 +21,7 @@ $brand-info:            #3498DB !default;
 $brand-warning:         #F39C12 !default;
 $brand-danger:          #E74C3C !default;
 $brand-blue:            #6FCCDB !default;
-
+$brand-link:            #e7685d !default;
 
 //== Scaffolding
 //
@@ -33,7 +33,7 @@ $body-bg:               #fff !default;
 $text-color:            $brand-primary !default;
 
 //** Global textual link color.
-$link-color:            $brand-success !default;
+$link-color:            $brand-link !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      $link-color !default;
 //** Link hover decoration.

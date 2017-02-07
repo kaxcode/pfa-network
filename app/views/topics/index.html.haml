@@ -1,14 +1,15 @@
+-# Topics index
+-# =============================================
 .topic-admin-editing-tools-box
+  = link_to root_path do
+    %button.btn.btn-large.btn-warning
+      Back
   - if current_user_admin?
     = link_to new_topic_path do
       %button.btn.btn-large.btn-success
         New
-  = link_to root_path do
-    %button.btn.btn-large.btn-warning
-      Back
-
 .topic-selection-text.text-center
-  %h1 Select a topic
+  Select a topic
 .container
   - @topics.each do |topic|
     .col-md-6

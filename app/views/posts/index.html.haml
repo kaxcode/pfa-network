@@ -1,15 +1,13 @@
--# Posts
+-# Posts index
 -# =============================================
-.col-md-8.col-md-offset-2.index-top-navigation-and-topic
-  .user-nav
-    = link_to topics_path do
-      %button.btn.btn-large.btn-warning
-        Back
-    = link_to new_topic_post_path do
-      %button.btn.btn-large.btn-success
-        Write a Post
-  .index-topic-name
-    .h2.topic-name-in-post-index
-      = @topic.name
+.user-nav
+  = link_to topics_path do
+    %button.btn.btn-large.btn-warning
+      Back
+  = link_to new_topic_post_path do
+    %button.btn.btn-large.btn-success
+      Write a Post
+.topic-name-in-post-index
+  = @topic.name
 .row
   = render @posts

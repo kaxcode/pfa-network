@@ -1,3 +1,14 @@
+.topic-name-in-post-index {
+  font-family: 'Concert One', cursive;
+  font-size: 45px;
+  text-align: center;
+}
+
+.topic-selection-text {
+  font-family: 'Concert One', cursive;
+  font-size: 45px;
+}
+
 .fa-heart {
   color: red;
 }
@@ -42,12 +53,8 @@
 }
 
 .post-each-index {
-  margin-top: 20px;
+  margin-top: 10px;
   border-bottom: 1px dashed #95a5a6;
-}
-
-.index-topic-name {
-  text-align: center;
 }
 
 .index-top-navigation-and-topic {

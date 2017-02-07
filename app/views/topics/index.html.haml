@@ -1,16 +1,14 @@
-.categoy-index
-  .row
-    .col-md-12.text-center.topic-selection-text
-      .h1 Select a topic
-.admin-editing-tools-box
-  .col-md-12.text-center
-    - if current_user_admin?
-      = link_to new_topic_path do
-        %button.btn.btn-large.btn-success
-          New
-    = link_to root_path do
-      %button.btn.btn-large.btn-warning
-        Back
+.topic-admin-editing-tools-box
+  - if current_user_admin?
+    = link_to new_topic_path do
+      %button.btn.btn-large.btn-success
+        New
+  = link_to root_path do
+    %button.btn.btn-large.btn-warning
+      Back
+
+.topic-selection-text.text-center
+  %h1 Select a topic
 .container
   - @topics.each do |topic|
     .col-md-6

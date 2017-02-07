@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :admin!
+  before_action :admin!, except: [:show]
 
   def edit
     @user = User.find(params[:id])
@@ -13,5 +13,10 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 end

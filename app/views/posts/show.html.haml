@@ -4,7 +4,7 @@
   .col-md-8.col-md-offset-2
     .show-post-box.post-link-hover
       %p.post-link-hover
-        = @post.user.name
+        = link_to @post.user.name, user_path(@post.user)
       %p.post-link-hover
         = distance_of_time_in_words_to_now(@post.created_at)
       %h1.post-link-hover

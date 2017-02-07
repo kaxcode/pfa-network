@@ -7,6 +7,14 @@
   position: center;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+}
+
 .jumbotron {
   border-bottom: 2px dashed rgba(231, 104, 93, 0.5);
 }

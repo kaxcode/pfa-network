@@ -18,16 +18,14 @@
         = link_to @post.body, @post.body
       - else
         = @post.body
-    .show-comment_count_heart
+    .show-comment_count_heart.hearts-and-comments
       = link_to like_topic_post_path([@topic, @post]) do
         %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-        %span
-          = @post.likes.count
-          &nbsp;
+        = @post.likes.count
+        &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-        %span
-          = @post.comments.count
-          &nbsp;
+        = @post.comments.count
+        &nbsp;
       .show-admin-editing-tools-box.pull-right
         -if user_can_edit_delete?
           = link_to edit_topic_post_path([@topic, @post]) do

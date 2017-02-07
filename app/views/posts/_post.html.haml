@@ -1,19 +1,17 @@
 .col-md-8.col-md-offset-2
   = link_to [post.topic, post], class: "post-link-hover" do
     .post-each-index
-      %p.post-link-hover
+      %p
       = post.user.name
       %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
       = distance_of_time_in_words_to_now(post.created_at)
-      %h1.post-link-hover
+      %h1
         = post.title
       %p= (post.body).truncate(200)
       %p.comment_count_heart
         %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-        %span
-          = post.likes.count
-          &nbsp;
+        = post.likes.count
+        &nbsp;
         %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-        %span
-          = post.comments.count
-          &nbsp;
+        = post.comments.count
+        &nbsp;

@@ -1,33 +1,40 @@
-# Purpose
+Tryout the app: https://polkflautism.herokuapp.com/
 
-To create a web application for families in Polk County, FL to connect with other families that have children with autism spectrum disorder.
+# Purpose
+Creating a forum for families in Polk County, FL to share resources that help them raise and care for children with autism spectrum disorder.
 
 # Features
 - User should be able to sign up with Twitter, Facebook, or Google.
 - User should be able to post an article, like articles, leave a comment in an article.
-- The posts will be separated into categories for easier navigation.
+- The posts will be separated into topics for easier navigation.
 - User will be able to see their own likes and posts.
-- Admin can see admin-only buttons for creating, deleting, and updating categories. Admin should also be able to delete posts, comments and users.
+- Admin can see admin-only buttons for creating, deleting, and updating topics. Admin should also be able to delete posts, comments and users.
 - User should be able to edit, update, and delete their comments and posts.
-- Admin can send out weekly/monthly newsletter using mailchimp api.
 
 # How
 
-- Scaffolds
+- Controllers
   - comments
-  - users
   - posts
-  - categories
+  - users
+  - search
+  - session (omniauth)
+  - topics
+  - welcome (homepage)
 
 - Models
-  -likes
+  - Comment
+  - Like
+  - Post
+  - Topic
+  - User
 
 - Gems/APIs
   - omniauth
   - omniauth-twitter
   - omniauth-facebook
   - omniauth-google-oauth2
-  - gibbon
-
 
 #Result
+
+![screenshot](

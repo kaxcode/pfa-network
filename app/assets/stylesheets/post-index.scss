@@ -6,6 +6,10 @@
   color: #6fccdb;
 }
 
+.fa-ellipsis-h {
+  color: #6fccdb;
+}
+
 .published-time {
   font-size: 12px;
 }
@@ -17,6 +21,17 @@
 .comment-list-box {
   margin-top: 60px;
 }
+
+.post-link-hover {
+  margin: 0;
+}
+
+.comment_count_heart {
+  margin-top: 15px;
+  border-top: 1px dashed #95a5a6;
+  padding-top: 10px;
+}
+
 
 // Media Queries
 /* iPhone 5 (portrait)----------- */

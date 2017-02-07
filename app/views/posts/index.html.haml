@@ -1,14 +1,14 @@
 -# Posts
 -# =============================================
-.admin-editing-tools-box.new-topic-admin-box
-  .col-md-4.post-index-top-nav
+.col-md-8.col-md-offset-2.index-top-navigation-and-topic
+  .user-nav
     = link_to topics_path do
       %button.btn.btn-large.btn-warning
         Back
     = link_to new_topic_post_path do
       %button.btn.btn-large.btn-success
         Write a Post
-  .col-md-8.topic-name-in-index-box
+  .index-topic-name
     .h2.topic-name-in-post-index
       =@topic.name
 .row

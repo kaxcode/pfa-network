@@ -36,10 +36,10 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user_admin?
 
-  def users_post?
-    current_user == @post.user
+  def user_can_edit_delete?
+    current_user_admin? || (current_user == @post.user)
   end
-  helper_method :users_post?
+  helper_method :user_can_edit_delete?
 
   def user_can_delete?(comment)
     current_user_admin? || (current_user == comment.user)

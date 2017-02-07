@@ -1,6 +1,6 @@
 -# Posts
 -# =============================================
-.user-editing-tools-box
+.show-user-back-box
   = link_to topic_posts_path do
     %button.btn.btn-large.btn-warning
       Back
@@ -28,8 +28,8 @@
         %span
           = @post.comments.count
           &nbsp;
-      .admin-editing-tools-box
-        -if users_post?
+      .show-admin-editing-tools-box.pull-right
+        -if user_can_edit_delete?
           = link_to edit_topic_post_path([@topic, @post]) do
             %button.btn.btn-large.btn-success
               Edit
@@ -41,7 +41,7 @@
       %h3 Leave a comment
       = form_for [@topic, @post, @post.comments.new] do |f|
         = f.text_area :comment_body, class: "form-control", rows: "2"
-        = f.submit class: 'btn btn-success pull-right', value: "Create Comment"
+        = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Create Comment"
       .comment-list-box
         - @post.comments.select(&:persisted?).each do |comment|
           .comment-each
@@ -51,8 +51,8 @@
               = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
             %p
               = comment.comment_body
+          .show-comment-user-delete-box.pull-right
             -if user_can_delete?(comment)
-              %p
-                = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
-                  %button.btn.btn-large.btn-danger
-                    Delete
+              = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %button.btn.btn-large.btn-danger
+                  Delete

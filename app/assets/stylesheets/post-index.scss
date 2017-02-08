@@ -1,12 +1,7 @@
 .topic-name-in-post-index {
-  font-family: 'Concert One', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 45px;
   text-align: center;
-}
-
-.topic-selection-text {
-  font-family: 'Concert One', cursive;
-  font-size: 45px;
 }
 
 .fa-heart {
@@ -47,6 +42,10 @@
   margin-top: 60px;
 }
 
+.show-post-box {
+  font-family: 'Roboto', sans-serif;
+}
+
 .comment-each {
   border-bottom: 1px dashed #95a5a6;
   padding-top: 10px;
@@ -55,6 +54,7 @@
 .post-each-index {
   margin-top: 10px;
   border-bottom: 1px dashed #95a5a6;
+  font-family: 'Roboto', sans-serif;
 }
 
 .index-top-navigation-and-topic {

@@ -1,7 +1,6 @@
 .col-md-8.col-md-offset-2
   = link_to [post.topic, post], class: "post-link-hover" do
     .post-each-index
-      %p
       = post.user.name
       %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
       = distance_of_time_in_words_to_now(post.created_at)

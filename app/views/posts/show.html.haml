@@ -4,53 +4,53 @@
   = link_to topic_posts_path do
     %button.btn.btn-large.btn-warning
       Back
-.post-show-row
+
+.col-md-8.col-md-offset-2
+  .show-post-box.post-link-hover
+    %p.post-link-hover
+      = link_to @post.user.name, user_path(@post.user)
+      %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
+      = distance_of_time_in_words_to_now(@post.created_at)
+    %h1.post-link-hover
+      = @post.title
+    %p.post-body
+    - if @post.body.include?("https:")||@post.body.include?("http:")
+      = link_to @post.body, @post.body
+    - else
+      = @post.body
+  .show-comment_count_heart.hearts-and-comments
+    = link_to like_topic_post_path([@topic, @post]) do
+      %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
+      = @post.likes.count
+      &nbsp;
+      %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
+      = @post.comments.count
+      &nbsp;
+    .show-admin-editing-tools-box.pull-right
+      -if user_can_edit_delete?
+        = link_to edit_topic_post_path([@topic, @post]) do
+          %button.btn.btn-large.btn-success
+            Edit
+        = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+          %button.btn.btn-large.btn-danger
+            Delete
+.comments-box
   .col-md-8.col-md-offset-2
-    .show-post-box.post-link-hover
-      %p.post-link-hover
-        = link_to @post.user.name, user_path(@post.user)
-        %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
-        = distance_of_time_in_words_to_now(@post.created_at)
-      %h1.post-link-hover
-        = @post.title
-      %p.post-body
-      - if @post.body.include?("https:")||@post.body.include?("http:")
-        = link_to @post.body, @post.body
-      - else
-        = @post.body
-    .show-comment_count_heart.hearts-and-comments
-      = link_to like_topic_post_path([@topic, @post]) do
-        %span.i.fa.fa-heart{"aria-hidden" => "true"} &nbsp;
-        = @post.likes.count
-        &nbsp;
-        %span.i.fa.fa-commenting-o{"aria-hidden" => "true"} &nbsp;
-        = @post.comments.count
-        &nbsp;
-      .show-admin-editing-tools-box.pull-right
-        -if user_can_edit_delete?
-          = link_to edit_topic_post_path([@topic, @post]) do
-            %button.btn.btn-large.btn-success
-              Edit
-          = link_to ([@topic, @post]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
-            %button.btn.btn-large.btn-danger
-              Delete
-  .comments-box
-    .col-md-8.col-md-offset-2
-      %h3 Leave a comment
-      = form_for [@topic, @post, @post.comments.new] do |f|
-        = f.text_area :comment_body, class: "form-control", rows: "2"
-        = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Create Comment"
-      .comment-list-box
-        - @post.comments.select(&:persisted?).each do |comment|
-          .comment-each
-            %p
-              = comment.user.name
-              %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
-              = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
-            %p
-              = comment.comment_body
-          .show-comment-user-delete-box.pull-right
-            -if user_can_delete?(comment)
-              = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
-                %button.btn.btn-large.btn-danger
-                  Delete
+    %h3 Leave a comment
+    = form_for [@topic, @post, @post.comments.new] do |f|
+      = f.text_area :comment_body, class: "form-control", rows: "2"
+      = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Create Comment"
+    .comment-list-box
+      - @post.comments.select(&:persisted?).each do |comment|
+        .comment-each
+          %p
+            = comment.user.name
+            %i.fa.fa-ellipsis-h{"aria-hidden" => "true"}
+            = distance_of_time_in_words_to_now(comment.created_at) unless comment.created_at.blank?
+          %p
+            = comment.comment_body
+        .show-comment-user-delete-box.pull-right
+          -if user_can_delete?(comment)
+            = link_to ([@topic, @post, @comment, comment]), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+              %button.btn.btn-large.btn-danger
+                Delete

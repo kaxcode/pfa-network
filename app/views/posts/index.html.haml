@@ -7,6 +7,10 @@
   = link_to new_topic_post_path do
     %button.btn.btn-large.btn-success
       Write a Post
+  - if current_user_admin?
+    = link_to @topic, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+      %button.btn.btn-large.btn-danger
+        Delete
 .topic-name-in-post-index
   = @topic.name
 .row

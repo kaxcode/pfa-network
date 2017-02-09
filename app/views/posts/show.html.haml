@@ -39,7 +39,10 @@
     %h3 Leave a comment
     = form_for [@topic, @post, @post.comments.new] do |f|
       = f.text_area :comment_body, class: "form-control", rows: "2"
-      = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Create Comment"
+      - if logged_in?
+        = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Create Comment"
+      - else
+        = f.submit class: 'btn btn-success pull-right leave-comment-button', value: "Sign in to create comment"
     .comment-list-box
       - @post.comments.select(&:persisted?).each do |comment|
         .comment-each

@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
   # Method to use in filter to ensure the user is logged in
   def authenticate!
     unless logged_in?
-      redirect_to login_path
+      return_to = request.request_method == "GET" ? request.original_url : root_path
+
+      redirect_to login_path(return_to: return_to)
     end
   end
 

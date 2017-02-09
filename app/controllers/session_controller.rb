@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
   # logging in
   def new
+    @return_to = params[:return_to]
   end
 
   # handle the post from the login page
@@ -8,7 +9,7 @@ class SessionController < ApplicationController
     self.current_user = User.from_omniauth(request.env['omniauth.auth'])
 
     if current_user
-      redirect_to root_path
+      redirect_to request.env['omniauth.origin']
     else
       redirect_to login_path
     end
